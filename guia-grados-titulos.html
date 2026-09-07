@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Guía de trámites de la Facultad de Ingeniería de Minas, Geología y Metalurgia (FIMGM-UNASAM): bachiller, título profesional y segunda especialidad, según el RCU N.° 576-2026.">
+<title>De Egresado a Titulado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<script src="https://cdn.jsdelivr.net/npm/lucide@1.40.0/dist/umd/lucide.min.js"></script>
+<style>
+:root{
+  --bg:#f5f6f4; --surface:#ffffff; --surface-2:#eceff0; --surface-3:#e3f4f8;
+  --ink:#0c2233; --body:#3c505f; --muted:#647689;
+  --line:#dfe4e2; --line-soft:#eaeeec;
+  --primary:#0a5fb4; --primary-dark:#084c90; --primary-soft:#e9f4fa; --primary-line:#bfe0f2;
+  --copper:#a2540a; --copper-dark:#7c3f07; --copper-soft:#fdecd9; --copper-line:#f3cc9a;
+  --good:#0b6e4f; --good-soft:#e2f4ec; --good-line:#bcdfcd;
+  --bad:#c81729; --bad-soft:#fbe7e6;
+  --shadow-sm: 0 1px 2px rgba(12,34,51,.05), 0 1px 1px rgba(12,34,51,.04);
+  --shadow-md: 0 12px 28px -14px rgba(12,34,51,.18), 0 2px 6px rgba(12,34,51,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--body); position:relative;
+  font-family:"Archivo", ui-sans-serif, system-ui, sans-serif;
+  font-size:16px; line-height:1.62; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:"Archivo"; margin:0; color:var(--ink); font-weight:700; letter-spacing:-.01em; text-wrap:balance;}
+.cite{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.72rem; font-weight:500; color:var(--muted); white-space:nowrap;}
+a{color:var(--primary)}
+::selection{background:var(--primary-soft)}
+svg.ic{width:1em; height:1em; display:inline-block; vertical-align:-.15em;}
+svg.lucide{width:1em; height:1em; display:inline-block; vertical-align:-.15em; stroke-width:1.9; flex:0 0 auto;}
+.wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+@media (max-width:640px){.wrap{padding:0 18px;}}
+[hidden]{display:none !important;}
+img,svg{max-width:100%;}
+
+/* ---------------- nav ---------------- */
+nav.topnav{
+  position:fixed; top:0; left:0; right:0; z-index:40;
+  background:transparent; border-bottom:1px solid transparent; backdrop-filter:none;
+  transition:background .25s ease, border-color .25s ease, backdrop-filter .25s ease;
+}
+nav.topnav.scrolled{
+  background:rgba(245,246,244,.92); backdrop-filter:blur(10px); border-bottom-color:var(--line);
+}
+nav.topnav .row{display:flex; align-items:center; gap:22px; max-width:1120px; margin:0 auto; padding:0 24px; height:68px;}
+.logo{display:flex; align-items:center; gap:10px; text-decoration:none; flex:0 0 auto;}
+.logo .mark{width:34px; height:42px; object-fit:contain; flex:0 0 auto; display:block; filter:drop-shadow(0 1px 6px rgba(3,18,36,.35));}
+.logo .text{display:flex; flex-direction:column; line-height:1.15;}
+.logo .text b{font-size:.92rem; font-weight:800; color:#fff; text-shadow:0 1px 8px rgba(3,18,36,.35); transition:color .25s;}
+.logo .text span{font-size:.68rem; color:rgba(255,255,255,.85); font-weight:600; letter-spacing:.03em; text-transform:uppercase; transition:color .25s;}
+nav.topnav.scrolled .logo .text b{color:var(--ink); text-shadow:none;}
+nav.topnav.scrolled .logo .text span{color:var(--muted);}
+.navlinks{display:flex; gap:2px; overflow-x:auto; flex:1 1 auto;}
+.navlinks::-webkit-scrollbar{display:none;}
+nav.topnav a.nlink{
+  white-space:nowrap; text-decoration:none; color:rgba(255,255,255,.92); font-weight:600; font-size:.86rem;
+  padding:10px 12px; border-radius:999px; transition:background .15s,color .15s; text-shadow:0 1px 6px rgba(3,18,36,.3);
+}
+nav.topnav a.nlink:hover{color:#fff; background:rgba(255,255,255,.16);}
+nav.topnav a.nlink.active{color:#fff; background:rgba(255,255,255,.24);}
+nav.topnav.scrolled a.nlink{color:var(--muted); text-shadow:none;}
+nav.topnav.scrolled a.nlink:hover{color:var(--ink); background:var(--surface-2);}
+nav.topnav.scrolled a.nlink.active{color:var(--primary); background:var(--primary-soft);}
+
+/* ---------------- hero ---------------- */
+.hero{
+  position:relative; overflow:hidden; padding:148px 0 64px; isolation:isolate;
+  background:linear-gradient(180deg,#0a5fb4,#bcdcef);
+}
+@media (max-width:640px){.hero{padding:128px 0 48px;}}
+.hero-bg{position:absolute; inset:0; width:100%; height:100%; z-index:0; display:block; object-fit:cover;}
+.hero-scrim{
+  position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:linear-gradient(180deg, rgba(3,18,36,.1) 0%, rgba(3,18,36,.32) 78%, #fff 100%);
+}
+.hero-inner{position:relative; z-index:2; max-width:640px;}
+
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.92); color:var(--copper-dark);
+  font-size:.8rem; font-weight:700; padding:7px 14px 7px 10px; border-radius:999px; margin-bottom:20px;
+}
+.eyebrow .dot{width:7px; height:7px; border-radius:50%; background:var(--copper);}
+.hero h1{font-size:clamp(2.2rem,4.6vw,3.4rem); line-height:1.05; color:#fff; text-shadow:0 2px 24px rgba(3,18,36,.3);}
+.hero h1 .hi{color:#ffe1b8;}
+.hero p.lede{font-size:1.08rem; color:rgba(255,255,255,.95); max-width:52ch; margin-top:18px;}
+.hero-ctas{display:flex; gap:12px; margin-top:28px; flex-wrap:wrap;}
+.btn{
+  display:inline-flex; align-items:center; gap:8px; text-decoration:none; font-weight:700; font-size:.92rem;
+  padding:14px 24px; border-radius:999px; transition:transform .12s, box-shadow .12s, background .12s, border-color .12s;
+}
+.hero .btn-primary{background:#fff; color:var(--primary-dark); box-shadow:var(--shadow-md);}
+.hero .btn-primary:hover{background:#eef6fc; transform:translateY(-1px);}
+.hero .btn-ghost{background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.55); backdrop-filter:blur(4px);}
+.hero .btn-ghost:hover{background:rgba(255,255,255,.26); border-color:#fff;}
+
+.stat-row{display:flex; gap:0; margin-top:38px; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,.32); padding-top:22px;}
+.stat-row .s{flex:1 1 130px; padding-right:18px;}
+.stat-row .k{font-family:"IBM Plex Mono",monospace; font-size:1.55rem; font-weight:600; color:#fff; font-variant-numeric:tabular-nums;}
+.stat-row .k small{font-family:"Archivo"; font-size:.72rem; color:rgba(255,255,255,.75); font-weight:600; margin-left:4px;}
+.stat-row .l{font-size:.78rem; color:rgba(255,255,255,.85); margin-top:3px;}
+
+/* ---------------- rutas ---------------- */
+.section-lede{color:var(--body); max-width:64ch; margin:12px 0 0; font-size:1rem;}
+.rutas{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:22px 0 60px;}
+@media (max-width:860px){.rutas{grid-template-columns:1fr 1fr;}}
+@media (max-width:480px){.rutas{grid-template-columns:1fr;}}
+.r-card{
+  position:relative; background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:22px 24px 24px; text-decoration:none;
+  box-shadow:var(--shadow-sm); transition:box-shadow .15s, transform .15s, border-color .15s;
+  display:flex; flex-direction:column; gap:10px;
+}
+.r-card:hover{box-shadow:var(--shadow-md); transform:translateY(-2px); border-color:var(--primary-line);}
+.r-tag{font-family:"IBM Plex Mono",monospace; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--primary);}
+.r-tag--alt{color:var(--copper-dark);}
+.r-card .r-ic{
+  width:46px; height:46px; border-radius:50%; color:#fff; font-size:1.15rem;
+  background:linear-gradient(150deg, var(--primary) 0%, var(--primary-dark) 100%);
+  box-shadow:0 8px 16px -8px rgba(10,95,180,.5), 0 0 0 5px var(--primary-soft);
+  display:flex; align-items:center; justify-content:center; margin-top:2px;
+}
+.r-ic--alt{
+  background:linear-gradient(150deg, var(--copper) 0%, var(--copper-dark) 100%) !important;
+  box-shadow:0 8px 16px -8px rgba(124,63,7,.5), 0 0 0 5px var(--copper-soft) !important;
+}
+.r-card h3{font-size:1.12rem;}
+.r-card p{margin:0; font-size:.86rem; color:var(--muted);}
+.r-card .go{margin-top:auto; font-size:.82rem; font-weight:700; color:var(--primary); display:flex; align-items:center; gap:5px;}
+.r-card--alt{border-style:dashed; border-color:var(--copper-line);}
+.r-card--alt .go{color:var(--copper-dark);}
+.r-card--link::after{
+  content:""; position:absolute; top:50%; right:-20px; width:13px; height:13px; z-index:2;
+  border-top:2px solid var(--primary-line); border-right:2px solid var(--primary-line);
+  transform:translateY(-50%) rotate(45deg); background:var(--bg);
+}
+@media (max-width:860px){.r-card--link::after{display:none;}}
+
+.decision{
+  background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:26px 28px; margin-bottom:64px; box-shadow:var(--shadow-sm);
+}
+.decision h3{font-size:1.15rem; margin-bottom:16px;}
+.decision .branch{display:flex; gap:16px; flex-wrap:wrap;}
+.decision .branch-item{flex:1 1 240px; border-radius:14px; padding:16px 18px; border:1px solid;}
+.decision .branch-head{display:flex; align-items:center; gap:9px;}
+.decision .branch-head b{font-size:.95rem; color:var(--ink);}
+.decision .branch-item p{margin:5px 0 0; font-size:.9rem; color:var(--body);}
+.decision .branch-good{background:var(--good-soft); border-color:var(--good-line);}
+.decision .branch-good .branch-head i{color:var(--good);}
+.decision .branch-todo{background:var(--copper-soft); border-color:var(--copper-line);}
+.decision .branch-todo .branch-head i{color:var(--copper-dark);}
+
+/* ---------------- sections ---------------- */
+main{background:var(--surface);}
+section.stage{padding:60px 0; scroll-margin-top:84px; border-top:1px solid var(--line-soft);}
+section.stage:nth-of-type(even){background:var(--bg);}
+.stage-head{display:flex; align-items:flex-start; gap:18px; margin-bottom:6px;}
+.phase-num{
+  flex:0 0 auto; width:50px; height:50px; border-radius:50%; color:#fff;
+  background:linear-gradient(150deg, var(--copper) 0%, var(--copper-dark) 100%);
+  box-shadow:0 10px 18px -8px rgba(124,63,7,.5), 0 0 0 6px var(--copper-soft), 0 0 0 2px #fff;
+  display:flex; align-items:center; justify-content:center; font-family:"IBM Plex Mono",monospace; font-size:1.05rem; font-weight:700;
+}
+.phase-num svg.lucide{width:22px; height:22px; stroke-width:1.8;}
+.stage-head .tag{font-family:"IBM Plex Mono",monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); display:block; margin-bottom:5px;}
+.stage-head h2{font-size:clamp(1.5rem,3vw,2.05rem);}
+.stage-lede{color:var(--body); max-width:66ch; margin:14px 0 0; font-size:1rem;}
+
+h3.subhead{font-size:1.25rem; margin-top:38px;}
+.subhead-note{color:var(--body); font-size:.9rem; max-width:66ch; margin-top:6px;}
+
+.callout{border:1px solid var(--primary-line); background:var(--primary-soft); border-radius:16px; padding:18px 20px; margin-top:24px;}
+.callout h4{font-family:"IBM Plex Mono",monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:var(--primary-dark); margin-bottom:8px; font-weight:700;}
+.callout div{color:var(--body); font-size:.92rem;}
+
+.subtabs{display:flex; gap:8px; margin:24px 0 0; flex-wrap:wrap;}
+.subtabs button{
+  appearance:none; cursor:pointer; font-family:"Archivo"; font-weight:700; font-size:.84rem;
+  padding:10px 18px; border-radius:999px; border:1px solid var(--line); background:var(--surface); color:var(--muted);
+}
+.subtabs button.active{border-color:var(--primary); color:var(--primary); background:var(--primary-soft);}
+.subpanel{margin-top:24px;}
+.path-intro{background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin-top:16px; font-size:.92rem; color:var(--body);}
+.path-intro b{color:var(--ink)}
+
+/* ---- winding-road timeline ---- */
+ol.timeline{list-style:none; margin:36px 0 0; padding:0; position:relative;}
+.road-svg{position:absolute; inset:0; width:100%; height:100%; z-index:0; overflow:visible; pointer-events:none;}
+.road-svg .road-shadow{fill:none; stroke:rgba(30,20,60,.32); stroke-linecap:round; stroke-width:26; filter:blur(11px);}
+.road-svg .road-base{fill:none; stroke-linecap:round; stroke-width:20; stroke:#2b3037;}
+.road-svg .road-line{fill:none; stroke:#f4f6f4; stroke-width:3; stroke-dasharray:13 14; stroke-linecap:round; opacity:.95;}
+
+ol.timeline{padding:0 6%;}
+/* single, predictable layout rule: flexbox reliably centers pin+card on the row's height, no matter which
+   side the pin is on. Horizontal position (inset) and vertical rhythm (gap) are computed in JS per step
+   and applied as inline styles — see stepHTML()/markerHTML() — instead of a brittle CSS nth-child cycle. */
+.path-step{
+  position:relative; z-index:1; display:flex; align-items:center; gap:22px; margin-bottom:80px;
+}
+.path-step:last-child{margin-bottom:0;}
+.path-node{flex:0 0 auto; order:1; position:relative; z-index:2;}
+.path-card{flex:1 1 auto; order:2; min-width:0;}
+.path-step.side-right .path-node{order:2;}
+.path-step.side-right .path-card{order:1;}
+
+.path-marker.path-step{flex-direction:column; align-items:center; gap:14px;}
+
+/* pin skin: flat circular node with soft halo ring, number set below on its own pill so it reads over the road */
+.skin-pin .path-node-bubble{
+  width:52px; height:52px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.2rem;
+  background:linear-gradient(150deg, var(--primary) 0%, var(--primary-dark) 100%);
+  box-shadow:0 10px 18px -8px rgba(10,95,180,.5), 0 0 0 6px var(--primary-soft), 0 0 0 2px #fff;
+}
+.skin-pin .path-marker .path-node-bubble{
+  background:linear-gradient(150deg, var(--copper) 0%, var(--copper-dark) 100%);
+  box-shadow:0 10px 18px -8px rgba(124,63,7,.5), 0 0 0 6px var(--copper-soft), 0 0 0 2px #fff;
+}
+
+/* badge skin: same flat halo node, colors swapped for variety between stages */
+.skin-badge .path-node-bubble{
+  width:52px; height:52px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.2rem;
+  background:linear-gradient(150deg, var(--copper) 0%, var(--copper-dark) 100%);
+  box-shadow:0 10px 18px -8px rgba(124,63,7,.5), 0 0 0 6px var(--copper-soft), 0 0 0 2px #fff;
+}
+.skin-badge .path-marker .path-node-bubble{
+  background:linear-gradient(150deg, var(--primary) 0%, var(--primary-dark) 100%);
+  box-shadow:0 10px 18px -8px rgba(10,95,180,.5), 0 0 0 6px var(--primary-soft), 0 0 0 2px #fff;
+}
+
+.path-card{
+  grid-column:2; background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:20px 22px;
+  box-shadow:0 1px 2px rgba(12,34,51,.04), 0 16px 32px -18px rgba(12,34,51,.22);
+  transition:box-shadow .18s ease, transform .18s ease;
+}
+.path-card:hover{box-shadow:0 1px 2px rgba(12,34,51,.05), 0 20px 38px -16px rgba(12,34,51,.28); transform:translateY(-2px);}
+.path-marker .path-card--marker{
+  flex:0 0 auto; max-width:320px; text-align:center;
+  display:flex; align-items:center; justify-content:center; font-weight:800; color:var(--copper-dark);
+  background:var(--copper-soft); border-color:var(--copper-line); font-size:.92rem; padding:12px 22px;
+}
+.step-head{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:7px;}
+.step-head-left{display:flex; align-items:center; gap:9px;}
+.step-num{
+  font-family:"IBM Plex Mono",monospace; font-size:.72rem; font-weight:800; letter-spacing:.02em; color:var(--muted);
+  background:var(--surface-2); border:1px solid var(--line); border-radius:999px; padding:2px 9px; font-variant-numeric:tabular-nums;
+}
+.actor{font-family:"IBM Plex Mono",monospace; font-size:.7rem; letter-spacing:.02em; text-transform:uppercase; color:var(--muted); font-weight:500;}
+.chip-plazo{font-family:"IBM Plex Mono",monospace; font-size:.72rem; font-weight:600; color:var(--copper-dark); background:var(--copper-soft); border:1px solid var(--copper-line); padding:2px 10px; border-radius:999px; white-space:nowrap; font-variant-numeric:tabular-nums;}
+.path-card h4{font-size:1.02rem; margin-bottom:6px; font-weight:700;}
+.path-card p{margin:0 0 8px; font-size:.91rem; color:var(--body);}
+.path-card .foot{display:flex; justify-content:flex-end;}
+.note{border-radius:12px; padding:11px 14px; font-size:.84rem; margin:9px 0; line-height:1.45;}
+.note-warn{background:var(--copper-soft); color:var(--copper-dark); border:1px solid var(--copper-line);}
+.note-danger{background:var(--bad-soft); color:var(--bad); border:1px solid #f0c4c1;}
+@media (max-width:720px){
+  ol.timeline{padding:0 3%;}
+  .path-step{gap:14px;}
+  .skin-pin .path-node-bubble{width:40px; height:40px; font-size:1rem; box-shadow:0 8px 14px -7px rgba(10,95,180,.5), 0 0 0 4px var(--primary-soft), 0 0 0 2px #fff;}
+  .skin-pin .path-marker .path-node-bubble{box-shadow:0 8px 14px -7px rgba(124,63,7,.5), 0 0 0 4px var(--copper-soft), 0 0 0 2px #fff;}
+  .skin-badge .path-node-bubble{width:40px; height:40px; font-size:1rem; box-shadow:0 8px 14px -7px rgba(124,63,7,.5), 0 0 0 4px var(--copper-soft), 0 0 0 2px #fff;}
+  .skin-badge .path-marker .path-node-bubble{box-shadow:0 8px 14px -7px rgba(10,95,180,.5), 0 0 0 4px var(--primary-soft), 0 0 0 2px #fff;}
+  .path-card{padding:15px 16px;}
+}
+
+/* grading scale */
+.gradescale{margin:22px 0 4px;}
+.gradebar{display:flex; height:36px; border-radius:10px; overflow:hidden; border:1px solid var(--line);}
+.gradebar span{display:flex; align-items:center; justify-content:center; font-family:"IBM Plex Mono",monospace; font-size:.72rem; font-weight:600; color:#fff;}
+.gradelabels{display:flex; margin-top:7px;}
+.gradelabels span{font-size:.76rem; color:var(--muted); text-align:center;}
+
+/* documentos */
+.docpicker{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:20px;}
+.docpicker button{
+  text-align:left; cursor:pointer; border-radius:16px; padding:18px; border:1px solid var(--line); background:var(--surface);
+  font-family:inherit; box-shadow:var(--shadow-sm);
+}
+.docpicker button.active{background:var(--primary-soft); border-color:var(--primary); box-shadow:0 0 0 3px rgba(10,95,180,.14);}
+.docpicker svg.lucide{width:22px; height:22px; color:var(--primary); stroke-width:1.7;}
+.docpicker button.active svg.lucide{color:var(--primary-dark);}
+.docpicker h4{font-size:1rem; margin-top:10px; font-weight:700;}
+.docpicker p{margin:2px 0 0; font-size:.83rem; color:var(--muted);}
+.checklist{list-style:none; margin:22px 0 0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:10px;}
+.checklist li{display:flex; gap:11px; align-items:flex-start; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:12px 14px;}
+.doc-ic{
+  flex:0 0 auto; width:30px; height:30px; border-radius:9px; background:var(--primary-soft); color:var(--primary-dark);
+  display:flex; align-items:center; justify-content:center;
+}
+.doc-ic svg.lucide{width:16px; height:16px; stroke-width:2;}
+.checklist .box{flex:0 0 auto; width:17px; height:17px; border:1.5px solid var(--muted); border-radius:5px; margin-top:7px;}
+.checklist .txt{font-size:.89rem; color:var(--ink); margin-top:6px;}
+
+.physical{margin-top:44px; padding-top:36px; border-top:1px dashed var(--line);}
+.physical h3{font-size:1.2rem;}
+.physical-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+@media (max-width:820px){.physical-grid{grid-template-columns:1fr;}}
+.p-card{background:var(--copper-soft); border:1px solid var(--copper-line); border-radius:16px; padding:22px;}
+.p-ic{
+  width:54px; height:54px; border-radius:50%; color:#fff;
+  background:linear-gradient(150deg, var(--copper) 0%, var(--copper-dark) 100%);
+  box-shadow:0 10px 18px -8px rgba(124,63,7,.5), 0 0 0 6px rgba(255,255,255,.6), 0 0 0 2px #fff;
+  display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:16px;
+}
+.p-card h4{font-size:1rem; color:var(--copper-dark);}
+.p-card p{margin:6px 0 0; font-size:.86rem; color:var(--body);}
+.p-card b{color:var(--ink);}
+
+/* plazos */
+.plazo-groups{margin-top:26px; display:flex; flex-direction:column; gap:32px;}
+.plazo-group-head{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-bottom:11px;}
+.plazo-group-tag{display:block; font-family:"IBM Plex Mono",monospace; font-size:.68rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:3px;}
+.plazo-group-title{font-size:1.05rem;}
+.plazo-group-count{font-family:"IBM Plex Mono",monospace; font-size:.72rem; font-weight:600; color:var(--copper-dark); background:var(--copper-soft); border:1px solid var(--copper-line); border-radius:999px; padding:3px 11px; white-space:nowrap; font-variant-numeric:tabular-nums;}
+.tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:16px;}
+table.plazos{border-collapse:collapse; width:100%; min-width:600px; background:var(--surface); font-size:.87rem;}
+table.plazos th{text-align:left; font-family:"IBM Plex Mono",monospace; font-size:.7rem; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); background:var(--surface-2); padding:11px 15px; border-bottom:1px solid var(--line);}
+table.plazos td{padding:11px 15px; border-bottom:1px solid var(--line-soft); vertical-align:top; color:var(--body);}
+table.plazos td:first-child{color:var(--ink); font-weight:600;}
+table.plazos tr:last-child td{border-bottom:none;}
+table.plazos td.plazo-cell{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; color:var(--copper-dark); white-space:nowrap;}
+
+/* faq */
+details.faq{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:2px 0; margin-bottom:10px; box-shadow:var(--shadow-sm);}
+details.faq summary{cursor:pointer; list-style:none; padding:15px 20px; font-weight:700; font-size:.96rem; display:flex; justify-content:space-between; gap:12px; color:var(--ink);}
+details.faq summary::-webkit-details-marker{display:none;}
+details.faq summary::after{content:"+"; font-family:"IBM Plex Mono",monospace; color:var(--primary); font-weight:600;}
+details.faq[open] summary::after{content:"–";}
+details.faq .a{padding:0 20px 17px; color:var(--body); font-size:.9rem;}
+
+footer.site{border-top:1px solid var(--line); padding:32px 0 22px; background:var(--surface-2); scroll-margin-top:20px;}
+.footer-top{display:grid; grid-template-columns:1.3fr 1fr; gap:28px; align-items:center; padding-bottom:20px;}
+@media (max-width:820px){.footer-top{grid-template-columns:1fr; gap:20px;}}
+.footer-id{display:flex; gap:14px; align-items:flex-start;}
+.footer-escudo{flex:0 0 auto; filter:drop-shadow(0 3px 8px rgba(12,34,51,.14));}
+.footer-id h3{color:var(--ink); font-size:1.05rem; line-height:1.3; max-width:34ch;}
+.footer-sub{color:var(--muted); font-size:.78rem; margin:4px 0 10px;}
+.contact-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px;}
+.contact-list li{display:flex; align-items:center; gap:9px; color:var(--body); font-size:.86rem;}
+.contact-list svg.lucide{color:var(--primary); flex:0 0 auto;}
+.contact-list a{color:var(--primary); text-decoration:underline; text-decoration-color:var(--primary-line);}
+
+.folder-links{display:flex; flex-direction:column; gap:8px;}
+.folder-link{
+  display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:12px 14px; text-decoration:none; box-shadow:var(--shadow-sm); transition:border-color .15s, transform .15s;
+}
+.folder-link:hover{border-color:var(--primary-line); transform:translateX(2px);}
+.folder-link svg.lucide{color:var(--primary); flex:0 0 auto;}
+.folder-link span{display:flex; flex-direction:column; flex:1 1 auto; line-height:1.3;}
+.folder-link b{color:var(--ink); font-size:.9rem; font-weight:700;}
+.folder-link small{color:var(--muted); font-size:.76rem;}
+.folder-link .go-ic{color:var(--muted); flex:0 0 auto;}
+
+.footer-legal{padding-top:14px;}
+.footer-legal p{max-width:80ch; font-size:.78rem; color:var(--muted); margin:0;}
+
+@media (prefers-reduced-motion: reduce){ *{transition:none !important;} html{scroll-behavior:auto;} }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="row">
+    <a href="#" class="logo">
+      <img class="mark" src="data:image/webp;base64,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" alt="Escudo UNASAM" width="34" height="42">
+      <span class="text"><b>FIMGM</b><span>UNASAM</span></span>
+    </a>
+    <div class="navlinks" id="navlinks">
+      <a href="#egresado" class="nlink">Egresado</a>
+      <a href="#bachiller" class="nlink">Bachiller</a>
+      <a href="#titulo" class="nlink">Título</a>
+      <a href="#segunda" class="nlink">2.ª especialidad</a>
+      <a href="#documentos" class="nlink">Documentos</a>
+      <a href="#plazos" class="nlink">Plazos</a>
+      <a href="#faq" class="nlink">FAQ</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <video class="hero-bg" autoplay muted loop playsinline preload="auto">
+    <source src="pomabamba-ancash.webm" type="video/webm">
+  </video>
+  <div class="hero-scrim"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <h1>De egresado a <span class="hi">titulado</span></h1>
+      <p class="lede">Guía para tramitar tu constancia de egresado, tu bachiller, tu título profesional o, si ya tienes un título, tu segunda especialidad en Ingenieria de Minas, Geología y Metalurgia: qué presentar, quién lo revisa y en cuántos días.</p>
+      <div class="hero-ctas">
+        <a href="#egresado" class="btn btn-primary">Ver mi ruta →</a>
+        <a href="#documentos" class="btn btn-ghost">Ir a documentos</a>
+      </div>
+      <div class="stat-row">
+        <div class="s"><div class="k">45<small>días hábiles máx.</small></div><div class="l">Registro final en SUNEDU</div></div>
+        <div class="s"><div class="k">20<small>% máximo</small></div><div class="l">Uso de IA permitido</div></div>
+        <div class="s"><div class="k">29<small>artículos</small></div><div class="l">Reglamento vigente</div></div>
+        <div class="s"><div class="k">07<small>títulos</small></div><div class="l">Estructura del reglamento</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="rutas">
+    <a href="#egresado" class="r-card r-card--link">
+      <span class="r-tag">Paso 1 de 3</span>
+      <div class="r-ic"><i data-lucide="graduation-cap"></i></div>
+      <h3>Egresado</h3>
+      <p>Constancia de egreso y requisitos base.</p>
+      <span class="go">Ver ruta <i data-lucide="arrow-right"></i></span>
+    </a>
+    <a href="#bachiller" class="r-card r-card--link">
+      <span class="r-tag">Paso 2 de 3</span>
+      <div class="r-ic"><i data-lucide="flask-conical"></i></div>
+      <h3>Bachiller</h3>
+      <p>Investigación, idioma y resolución de grado.</p>
+      <span class="go">Ver ruta <i data-lucide="arrow-right"></i></span>
+    </a>
+    <a href="#titulo" class="r-card">
+      <span class="r-tag">Paso 3 de 3</span>
+      <div class="r-ic"><i data-lucide="award"></i></div>
+      <h3>Título profesional</h3>
+      <p>Tesis, TSP u otra modalidad.</p>
+      <span class="go">Ver ruta <i data-lucide="arrow-right"></i></span>
+    </a>
+    <a href="#segunda" class="r-card r-card--alt">
+      <span class="r-tag r-tag--alt">Ruta aparte</span>
+      <div class="r-ic r-ic--alt"><i data-lucide="layers"></i></div>
+      <h3>2.ª especialidad</h3>
+      <p>Para quien ya tiene título previo.</p>
+      <span class="go">Ver ruta <i data-lucide="arrow-right"></i></span>
+    </a>
+  </div>
+
+  <div class="decision">
+    <h3>¿Necesitas trabajo de investigación para el bachiller?</h3>
+    <div class="branch">
+      <div class="branch-item branch-good">
+        <div class="branch-head"><i data-lucide="check-circle-2"></i><b>Egresaste hasta el 31-mar-2024</b></div>
+        <p>Exonerado por bachillerato automático (Ley N.° 31971). Tramitas el grado directo. <span class="cite">Art. 14.1.1</span></p>
+      </div>
+      <div class="branch-item branch-todo">
+        <div class="branch-head"><i data-lucide="list-todo"></i><b>Egresaste después</b></div>
+        <p>Debes presentar y aprobar un trabajo de investigación o proyecto de tesis. <span class="cite">Art. 14.1</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section class="stage" id="egresado">
+    <div class="wrap">
+      <div class="stage-head">
+        <div class="phase-num">01</div>
+        <div><span class="tag">Antes de empezar</span><h2>Ser egresado</h2></div>
+      </div>
+      <p class="stage-lede">Eres egresado cuando completas el plan de estudios: mínimo 200 créditos entre obligatorios y electivos, tus prácticas preprofesionales sustentadas, y ninguna deuda con la UNASAM. <span class="cite">Art. 6</span></p>
+      <ol class="timeline" id="tl-egreso"></ol>
+    </div>
+  </section>
+
+  <section class="stage" id="bachiller">
+    <div class="wrap">
+      <div class="stage-head">
+        <div class="phase-num">02</div>
+        <div><span class="tag">Título II y III · Cap. I</span><h2>Camino al grado de bachiller</h2></div>
+      </div>
+      <p class="stage-lede">Aplica a todo egresado que no esté exonerado por bachillerato automático.</p>
+
+      <h3 class="subhead">Trabajo de investigación o proyecto de tesis</h3>
+      <p class="subhead-note">Solo si no estás exonerado. Debe vincularse a una línea de investigación de tu escuela; el trámite recién se inicia una vez que ya egresaste. <span class="cite">Art. 14.1.2</span></p>
+      <ol class="timeline" id="tl-investigacion"></ol>
+
+      <h3 class="subhead">Idioma extranjero o lengua nativa</h3>
+      <p class="subhead-note">Certificado de nivel básico validado por el Centro de Idiomas: inglés u otro idioma extranjero, o una lengua nativa (de preferencia quechua). <span class="cite">Art. 13</span></p>
+
+      <div class="callout">
+        <h4>Con todo listo</h4>
+        <div>Reúne los 20 requisitos de la FIMGM para el <a href="#documentos">grado de bachiller</a> — incluida la muestra de mineral — y entra al trámite final común (ver sección Plazos).</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage" id="titulo">
+    <div class="wrap">
+      <div class="stage-head">
+        <div class="phase-num">03</div>
+        <div><span class="tag">Título III · Cap. II</span><h2>Camino al título profesional</h2></div>
+      </div>
+      <p class="stage-lede">Requisito previo indispensable: contar con el grado de bachiller. Elige una modalidad — no se combinan.</p>
+
+      <div class="subtabs" id="subtabsTitulo">
+        <button data-sub="tesis" class="active">Tesis</button>
+        <button data-sub="tsp">Trabajo de suficiencia profesional</button>
+        <button data-sub="otras">Otras modalidades</button>
+      </div>
+
+      <div class="subpanel" data-sub-panel="tesis">
+        <div class="path-intro">Se cumple con el <b>informe final de tesis</b>, aprobado y sustentado ante un jurado. <span class="cite">Art. 17.1</span></div>
+        <ol class="timeline" id="tl-tesis"></ol>
+        <div class="gradescale" id="grade-tesis"></div>
+      </div>
+      <div class="subpanel" data-sub-panel="tsp" hidden>
+        <div class="path-intro">Para bachilleres con <b>mínimo 2 años de experiencia laboral</b> en su especialidad. <span class="cite">Art. 17.2</span></div>
+        <ol class="timeline" id="tl-tsp"></ol>
+        <div class="gradescale" id="grade-tsp"></div>
+      </div>
+      <div class="subpanel" data-sub-panel="otras" hidden>
+        <div class="path-intro">Solo para bachilleres de <b>carreras acreditadas</b>: artículo indizado (Scielo u otra de igual o mayor impacto) o patente. <span class="cite">Art. 17.3</span></div>
+        <ol class="timeline" id="tl-otras"></ol>
+      </div>
+
+      <div class="callout">
+        <h4>Con la modalidad aprobada</h4>
+        <div>Reúne los 23 requisitos de la FIMGM para el <a href="#documentos">título profesional</a> — incluidos los ejemplares empastados, los CD y el libro de la especialidad — y entra al trámite final común.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage" id="segunda">
+    <div class="wrap">
+      <div class="stage-head">
+        <div class="phase-num"><i data-lucide="layers"></i></div>
+        <div><span class="tag">Título III · Cap. III</span><h2>Título de segunda especialidad</h2></div>
+      </div>
+      <p class="stage-lede">Para quienes ya tienen licenciatura u otro título equivalente y cursan un programa de segunda especialidad (mínimo 2 semestres, 40 créditos). <span class="cite">Art. 18–20</span></p>
+      <ol class="timeline" id="tl-segunda"></ol>
+      <div class="gradescale" id="grade-segunda"></div>
+
+      <div class="callout">
+        <h4>¿Y la maestría o el doctorado?</h4>
+        <div>No se tramitan con este reglamento: se rigen por el Reglamento y la Directiva propios de la Escuela de Postgrado (RCU N.° 193-2026 y N.° 194-2026-UNASAM). <span class="cite">Art. 22</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage" id="documentos">
+    <div class="wrap">
+      <div class="stage-head">
+        <div class="phase-num"><i data-lucide="clipboard-check"></i></div>
+        <div><span class="tag">Checklist FIMGM 2026</span><h2>Documentos por trámite</h2></div>
+      </div>
+      <p class="stage-lede">Estas son las listas oficiales de la <b style="color:var(--ink)">Facultad de Ingeniería de Minas, Geología y Metalurgia</b> — más específicas y completas que el artículo general del reglamento. El expediente se presenta siempre en la <b style="color:var(--ink)">secretaría de la Decanatura de la FIMGM</b>.</p>
+
+      <div class="docpicker" id="docTabs">
+        <button data-doc="egresado"><i data-lucide="graduation-cap"></i><h4>Constancia de egresado</h4><p>9 requisitos</p></button>
+        <button data-doc="bachiller" class="active"><i data-lucide="flask-conical"></i><h4>Grado de bachiller</h4><p>20 requisitos</p></button>
+        <button data-doc="titulo"><i data-lucide="award"></i><h4>Título profesional</h4><p>23 requisitos</p></button>
+        <button data-doc="segunda"><i data-lucide="layers"></i><h4>Segunda especialidad</h4><p>9 requisitos · Art. 28 general</p></button>
+      </div>
+      <ul class="checklist" id="checklistOut"></ul>
+
+      <div class="physical">
+        <h3>Esto no se envía por correo — es físico</h3>
+        <p class="subhead-note" style="margin-bottom:18px;">Tres requisitos de la FIMGM que se te pueden pasar por alto porque no son PDFs: prepáralos con tiempo.</p>
+        <div class="physical-grid">
+          <div class="p-card">
+            <div class="p-ic"><i data-lucide="gem"></i></div>
+            <h4>Muestra de mineral o vidrio</h4>
+            <p>9 × 9 cm, según el modelo de la secretaría de Decanatura. Solo para el <b>grado de bachiller</b>.</p>
+          </div>
+          <div class="p-card">
+            <div class="p-ic"><i data-lucide="disc"></i></div>
+            <h4>CD con archivos digitales</h4>
+            <p>Nomenclatura exacta por archivo (p. ej. <span class="cite">CM033_DNI</span>, <span class="cite">CE033_DNI</span>). Para <b>bachiller</b> (1 CD) y <b>título</b> (uno por ejemplar + uno para el expediente).</p>
+          </div>
+          <div class="p-card">
+            <div class="p-ic"><i data-lucide="book-open"></i></div>
+            <h4>Libro de la especialidad</h4>
+            <p>Un ejemplar original de Minería, Geología o Metalurgia, edición 2000 en adelante. Solo para el <b>título profesional</b>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top:26px;">
+        <h4>Formatos que vas a necesitar</h4>
+        <div><b style="color:var(--ink)">Formulario Único de Trámite (FUT)</b> — es la solicitud dirigida al Decano que abre cualquiera de estos expedientes. <b style="color:var(--ink)">Declaración jurada de etnia y lengua materna</b> — formato exigido por SUNEDU (RD N.° 0007-2025-SUNEDU-DS-DIRGRATU) donde declaras tu autoidentificación étnica y tu lengua materna. Descarga ambos desde la carpeta de <a href="#pie-formatos">Formatos</a>, al final de esta página.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage" id="plazos">
+    <div class="wrap">
+      <div class="stage-head">
+        <div class="phase-num"><i data-lucide="gauge"></i></div>
+        <div><span class="tag">Panel de control</span><h2>Todos los plazos, en una tabla</h2></div>
+      </div>
+      <p class="stage-lede">Agrupado por etapa del trámite: cada bloque es una etapa y cada fila dentro de ella es un paso del reglamento con plazo explícito, útil para saber si se está demorando más de lo normal.</p>
+      <div class="plazo-groups" id="plazosBody"></div>
+    </div>
+  </section>
+
+  <section class="stage" id="faq">
+    <div class="wrap">
+      <div class="stage-head">
+        <div class="phase-num"><i data-lucide="circle-help"></i></div>
+        <div><span class="tag">Dudas comunes</span><h2>Preguntas frecuentes</h2></div>
+      </div>
+      <div style="margin-top:22px;" id="faqOut"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site" id="pie-formatos">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-id">
+        <img src="data:image/webp;base64,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" alt="Escudo UNASAM" width="50" height="62" class="footer-escudo">
+        <div>
+          <h3>Facultad de Ingeniería de Minas, Geología y Metalurgia</h3>
+          <p class="footer-sub">Universidad Nacional Santiago Antúnez de Mayolo · FIMGM</p>
+          <ul class="contact-list">
+            <li><i data-lucide="map-pin"></i>Av. Centenario N.° 200, Huaraz, Áncash, Perú</li>
+            <li><i data-lucide="phone"></i>(043) 42-4738</li>
+            <li><i data-lucide="mail"></i><a href="mailto:mesadepartesfimgm@unasam.edu.pe">mesadepartesfimgm@unasam.edu.pe</a> · Mesa de partes FIMGM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="folder-links">
+        <a href="https://unasam-my.sharepoint.com/:f:/g/personal/mesadepartesfimgm_unasam_edu_pe/IgCHBdASIn3nRbQL0O93bZWDAWA4XimX629x8wYlOEg4TKs?e=JckXpk" target="_blank" rel="noopener" class="folder-link">
+          <i data-lucide="folder-open"></i>
+          <span><b>Formatos</b><small>FUT, declaración jurada y modelos</small></span>
+          <i data-lucide="arrow-up-right" class="go-ic"></i>
+        </a>
+        <a href="https://unasam-my.sharepoint.com/:f:/g/personal/mesadepartesfimgm_unasam_edu_pe/IgCNZvc9Dj7SRK7OUAQqasvaARBF60gfz-50Sq-HKVzRUPQ?e=HZtHUu" target="_blank" rel="noopener" class="folder-link">
+          <i data-lucide="folder-open"></i>
+          <span><b>Reglamentos</b><small>RCU 576-2026 y requisitos FIMGM</small></span>
+          <i data-lucide="arrow-up-right" class="go-ic"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const D = {
+  egreso: [
+    {actor:"Estudiante", title:"Cumplir el plan de estudios", plazo:null, cite:"Art. 6.1",
+     detail:"Aprobar mínimo 200 créditos y todas las asignaturas exigidas por tu carrera; si convalidaste cursos, presentar el informe individual de conformidad."},
+    {actor:"Estudiante", title:"Sustentar prácticas preprofesionales", plazo:null, cite:"Art. 6.1",
+     detail:"Presentar la(s) constancia(s) de prácticas según el tiempo que exige tu escuela profesional."},
+    {actor:"Estudiante → Dir. Escuela / Postgrado", title:"Solicitar la constancia de egreso", plazo:null, cite:"Art. 8",
+     detail:"Con solicitud, recibo de pago y dos fotos actuales tamaño carné (pregrado) o pasaporte (posgrado), formales y fondo blanco."},
+    {actor:"Dirección de Escuela", title:"Emisión de la constancia de egreso", plazo:"5 días hábiles (máx.)", cite:"Art. 9",
+     detail:"La dirección de tu escuela profesional (o de la Escuela de Postgrado) emite el documento que acredita que culminaste tus estudios."},
+  ],
+  investigacion: [
+    {actor:"Estudiante/egresado", title:"Preparar el proyecto de investigación", plazo:null, cite:"Art. 14.1.2",
+     detail:"En formato digital, vinculado a una línea de investigación de tu escuela. Puedes redactarlo desde el último semestre, pero el trámite solo se inicia tras egresar."},
+    {actor:"Estudiante → Decanato", title:"Solicitar asesor y jurado", plazo:null, cite:"Art. 14.1.3",
+     detail:"Solicitud digital por mesa de partes virtual o correo institucional, con el proyecto, carta de aceptación del asesor, reporte de similitud (Turnitin) y reporte de uso de IA."},
+    {actor:"Decano → Dir. Escuela", title:"Traslado del expediente", plazo:"1 día hábil", cite:"Art. 14.1.4", detail:"El Decanato deriva el expediente a la Dirección de Escuela Profesional."},
+    {actor:"Director de Escuela", title:"Designa asesor y propone jurado", plazo:"3 días hábiles", cite:"Art. 14.1.4",
+     detail:"Propone presidente, secretario y vocal, todos vinculados a tu línea de investigación o departamento académico."},
+    {actor:"Decanato", title:"Resolución que aprueba la designación", plazo:"2 días hábiles", cite:"Art. 14.1.4", detail:"Con cargo a dar cuenta al Consejo de Facultad."},
+    {actor:"Decanato → Jurado", title:"Notificación al jurado", plazo:"2 días hábiles", cite:"Art. 14.1.4.1", detail:"Se remite la resolución y el expediente completo vía correo institucional."},
+    {actor:"Jurado evaluador", title:"Emite conformidad o no conformidad", plazo:"5 días hábiles", cite:"Art. 14.1.5",
+     detail:"Si hay observaciones, se detallan en un informe.",
+     note:{tone:"warn", text:"Si no hay conformidad: tienes 5 días hábiles para subsanar con tu asesor, y el jurado vuelve a evaluar."}},
+    {actor:"Presidente del jurado → Dir. Escuela → Decanato", title:"Elevación para aprobación", plazo:"2 + 1 días hábiles", cite:"Art. 14.1.5", detail:"Con la conformidad ya emitida, el expediente sube hasta el Decanato."},
+    {actor:"Consejo de Facultad", title:"Resolución que aprueba el proyecto", plazo:"—", cite:"Art. 14.1.8",
+     detail:"Desde aquí tienes un plazo mínimo de 4 meses y máximo de 1 año para elaborar el informe final (prorrogable 1 año más).",
+     note:{tone:"danger", text:"Si el jurado no da conformidad por segunda vez, debes presentar un trabajo de investigación nuevo."}},
+  ],
+  tesis: [
+    {actor:"Bachiller → Decanato", title:"Solicitar aprobación del informe final", plazo:null, cite:"Art. 17.1.1",
+     detail:"Digital por mesa de partes virtual, con carta de conformidad del asesor, reporte de similitud, reporte de uso de IA y la resolución que aprobó tu proyecto."},
+    {actor:"Decano → Dir. Escuela", title:"Traslado del expediente", plazo:"1 día hábil", cite:"Art. 17.1.2", detail:""},
+    {actor:"Dir. Escuela → Jurado", title:"Envío al jurado evaluador", plazo:"2 días hábiles", cite:"Art. 17.1.2", detail:""},
+    {actor:"Jurado evaluador", title:"Pronunciamiento de conformidad", plazo:"15 días", cite:"Art. 17.1.2",
+     detail:"Coordinado por el presidente del jurado; se notifica por correo institucional.",
+     note:{tone:"warn", text:"Si no hay conformidad: 10 días hábiles para subsanar. Si el jurado vuelve a observar, tienes 3 días hábiles adicionales."}},
+    {actor:"Dirección de Escuela", title:"Programa la sustentación", plazo:"3 días hábiles (máx.)", cite:"Art. 17.1.2", detail:"Fecha, hora y lugar, una vez que el informe está expedito."},
+    {actor:"Jurado", title:"Sustentación del informe final", plazo:"—", cite:"Art. 17.1.3",
+     detail:"Evaluación oral ante el jurado, con acta de sustentación.",
+     note:{tone:"danger", text:"Si desapruebas: se reprograma dentro de 2 meses. Si desapruebas una segunda vez, debes presentar un nuevo proyecto de tesis."}},
+    {actor:"Bachiller → Decano", title:"Solicitar el otorgamiento del título", plazo:null, cite:"Art. 17.1.5", detail:"Con la sustentación aprobada, inicias el trámite final adjuntando todos los documentos requeridos."},
+  ],
+  tsp: [
+    {actor:"Bachiller", title:"Cumplir el requisito de experiencia", plazo:null, cite:"Art. 17.2.1", detail:"Mínimo 2 años de experiencia laboral acreditada en tu especialidad."},
+    {actor:"Bachiller → Decanato", title:"Solicitar aprobación del proyecto TSP y asesor", plazo:null, cite:"Art. 17.2.2",
+     detail:"Con proyecto, carta de aceptación del asesor, reporte de similitud, reporte de uso de IA, CV descriptivo y constancias laborales."},
+    {actor:"Decanato", title:"Resolución que admite el proyecto", plazo:"60 días calendario (máx. para el informe)", cite:"Art. 17.2.3", detail:"Desde la admisión, ese es el plazo máximo para presentar el informe TSP."},
+    {actor:"Decano → Dir. Escuela → Comisión TSP", title:"Traslado del expediente", plazo:"2 días hábiles", cite:"Art. 17.2.4", detail:""},
+    {actor:"Director de Escuela", title:"Propone jurado", plazo:"3 días hábiles", cite:"Art. 17.2.4", detail:"Eleva la propuesta al Decanato para su ratificación."},
+    {actor:"Decanato → Jurado", title:"Designa asesor/jurado y notifica", plazo:"2 días hábiles", cite:"Art. 17.2.5", detail:"Vía correo institucional."},
+    {actor:"Jurado evaluador", title:"Revisión del informe TSP", plazo:"15 días hábiles", cite:"Art. 17.2.6",
+     detail:"Conformidad o no conformidad, notificada por correo institucional.",
+     note:{tone:"warn", text:"Si hay observaciones: 10 días hábiles para subsanar; el jurado responde en 5 días hábiles más."}},
+    {actor:"Dirección de Escuela", title:"Programa la sustentación", plazo:"3 días hábiles (máx.)", cite:"Art. 17.2.6", detail:""},
+    {actor:"Jurado", title:"Sustentación del informe TSP", plazo:"—", cite:"Art. 17.2.7",
+     detail:"Exposición del informe y ronda de preguntas.",
+     note:{tone:"danger", text:"Si desapruebas: se reprograma dentro de 2 meses. Segunda desaprobación → nuevo informe TSP."}},
+    {actor:"Consejo de Facultad", title:"Resolución que aprueba el TSP", plazo:"—", cite:"Art. 17.2.9", detail:""},
+  ],
+  otras: [
+    {actor:"Bachiller", title:"Verificar acreditación de tu carrera", plazo:null, cite:"Art. 17.3.1", detail:"Esta modalidad solo está disponible para carreras profesionales acreditadas de la UNASAM."},
+    {actor:"Bachiller → Decanato", title:"Solicitar aprobación del trabajo académico", plazo:null, cite:"Art. 17.3.2",
+     detail:"Con la carta de aceptación de la publicación, el artículo indizado o el registro de patente, y las evidencias correspondientes, en formato digital."},
+    {actor:"Director de Escuela", title:"Programa la disertación", plazo:null, cite:"Art. 17.3.2", detail:"Presentación o disertación del trabajo académico."},
+    {actor:"Consejo de Facultad", title:"Resolución de aprobación", plazo:"—", cite:"Art. 17.3.3", detail:"Con esto se cumple la exigencia académica para el título por esta modalidad."},
+  ],
+  segunda: [
+    {actor:"Programa", title:"Cursos de proyecto e informe final", plazo:null, cite:"Art. 21.1.1", detail:"Un curso para diseñar el proyecto de tesis (1.er semestre) y otro para el informe final (2.º semestre)."},
+    {actor:"Estudiante → Decanato", title:"Solicitar aprobación del proyecto y asesor", plazo:null, cite:"Art. 21.1.2", detail:"Con proyecto, carta de aceptación del asesor, reporte de similitud y reporte de uso de IA."},
+    {actor:"Decano → Dir. Escuela", title:"Traslado del expediente", plazo:"2 días hábiles (máx.)", cite:"Art. 21.1.3", detail:""},
+    {actor:"Director de Escuela", title:"Propone jurado", plazo:"3 días hábiles", cite:"Art. 21.1.3", detail:"Eleva al Decanato para ratificación."},
+    {actor:"Decanato → Jurado", title:"Designa y notifica asesor/jurado", plazo:"2 días hábiles (máx.)", cite:"Art. 21.1.4", detail:""},
+    {actor:"Jurado evaluador", title:"Revisión del proyecto de tesis", plazo:"15 días hábiles", cite:"Art. 21.1.5",
+     detail:"", note:{tone:"warn", text:"Observaciones: 10 días hábiles para subsanar; el jurado confirma en 5 días hábiles más."}},
+    {actor:"Consejo de Facultad", title:"Resolución que aprueba el proyecto", plazo:"—", cite:"Art. 21.1.6", detail:"Plazo de 4 meses a 1 año para el informe final (prorrogable 1 año más)."},
+    {actor:"Egresado → Decanato", title:"Solicitar aprobación del informe final", plazo:null, cite:"Art. 21.1.7", detail:"Con informe, carta de conformidad del asesor, reporte de similitud, reporte de uso de IA y resoluciones previas."},
+    {actor:"Jurado evaluador", title:"Revisión del informe final", plazo:"15 días hábiles", cite:"Art. 21.1.8",
+     detail:"", note:{tone:"warn", text:"Observaciones: 10 días hábiles para subsanar; conformidad del jurado en 5 días hábiles más."}},
+    {actor:"Dirección de Escuela", title:"Programa la sustentación", plazo:"3 días hábiles (máx.)", cite:"Art. 21.1.8", detail:""},
+    {actor:"Jurado", title:"Sustentación del informe final", plazo:"—", cite:"Art. 21.1.9",
+     detail:"", note:{tone:"danger", text:"Si desapruebas: reprogramación dentro de 2 meses. Segunda desaprobación → nuevo proyecto e informe completos."}},
+    {actor:"Consejo de Facultad", title:"Resolución que aprueba el informe final", plazo:"—", cite:"Art. 21.1.11", detail:""},
+  ],
+  tramite: [
+    {actor:"Estudiante → secretaría del Decanato", title:"Presentar el expediente completo", plazo:null, cite:"Art. 29", detail:"Con todos los requisitos del artículo 26, 27 o 28 según corresponda."},
+    {actor:"Decanato → Unidad de Grados y Títulos", title:"Traslado del expediente", plazo:"1 día hábil (máx.)", cite:"Art. 29", detail:""},
+    {actor:"Unidad de Grados y Títulos", title:"Revisión del expediente", plazo:"3 días hábiles", cite:"Art. 29", detail:"Si hay observaciones, se coordina la subsanación directamente contigo en hasta 2 días hábiles."},
+    {actor:"Unidad de Grados y Títulos → Dir. Escuela", title:"Informe de conformidad", plazo:"3 días hábiles (máx.)", cite:"Art. 29", detail:""},
+    {actor:"Director de Escuela → Decano", title:"Elevación para aprobación", plazo:"1 día hábil", cite:"Art. 29", detail:""},
+    {actor:"Consejo de Facultad", title:"Resolución que otorga el grado o título", plazo:"—", cite:"Art. 29", detail:""},
+    {actor:"Decanato → Rectorado", title:"Elevación del expediente", plazo:"2 días hábiles (máx.)", cite:"Art. 29", detail:"Para su incorporación en agenda del Consejo Universitario."},
+    {actor:"Consejo Universitario", title:"Confiere el grado o título", plazo:"—", cite:"Art. 29", detail:"Mediante resolución de Consejo Universitario."},
+    {actor:"Rector, Secretaría General, Decano", title:"Refrendan el diploma y lo remiten a SUNEDU", plazo:"—", cite:"Art. 29", detail:"Para su inscripción en el Registro Nacional de Grados y Títulos."},
+    {actor:"UNASAM", title:"Diploma a disposición del graduado/titulado", plazo:"45 días hábiles (máx.)", cite:"Art. 29", detail:"Contados desde que el trámite queda expedito para esta etapa final."},
+  ],
+};
+
+const REQUISITOS = {
+  egresado:[
+    "Solicitud dirigida al Decano de la FIMGM (Formulario Único de Trámite).",
+    "2 fotografías a colores, tamaño carné, con terno oscuro y fondo blanco.",
+    "Recibo de pago por derecho de constancia de egresado (Tesorería Central).",
+    "Copia autenticada del certificado de estudios.",
+    "Copia autenticada del consolidado de notas (solo cursos aprobados).",
+    "Copia autenticada del certificado de inglés, nivel básico, emitido por el Centro de Idiomas UNASAM.",
+    "Copia legalizada del certificado de un curso de computación.",
+    "Malla curricular.",
+    "Constancia de prácticas preprofesionales (mínimo 3 meses), con informe validado por el jefe de la unidad de prácticas."
+  ],
+  bachiller:[
+    "Solicitud dirigida al Decano (Formulario Único de Trámite).",
+    "Certificado de estudios original.",
+    "Constancia de prácticas preprofesionales, expedida por el Director de Escuela.",
+    "Certificado legalizado de idioma extranjero (de preferencia inglés) o lengua nativa (de preferencia quechua), nivel básico.",
+    "Constancia original de ingreso a la UNASAM, expedida por la Oficina General de Admisión.",
+    "Copia autenticada de la constancia de egresado, expedida por el Director de Escuela.",
+    "Constancia de no adeudo a la FIMGM.",
+    "Constancia de no adeudo a la Dirección de Bienestar Universitario.",
+    "Constancia de no adeudo a la Biblioteca Central UNASAM.",
+    "Copia simple del DNI ampliado al 150 %.",
+    "Declaración jurada de etnia y lengua materna.",
+    "Recibo de pago por derecho de grado académico.",
+    "3 fotografías de frente, tamaño pasaporte, a color, fondo blanco, traje formal (sin lentes).",
+    "Constancia de fecha de primera matrícula, expedida por el Director de Escuela.",
+    "Constancia de fecha de egreso, expedida por el Director de Escuela.",
+    "Informe individual de la Dirección de Escuela (y cuadro de convalidación si hiciste traslado interno o externo).",
+    "Copia del reporte curricular integral, sellado y firmado por el Director de Escuela.",
+    "Informe de prácticas preprofesionales, anillado y visado por el jefe de prácticas.",
+    "1 muestra pequeña de mineral o vidrio, de 9 × 9 cm (según modelo de la secretaría de Decanatura).",
+    "1 CD con el archivo digital en PDF editable de: constancia de primera matrícula, constancia de egreso y una fotografía escaneada en JPG."
+  ],
+  titulo:[
+    "Solicitud dirigida al Decano de la FIMGM (Formulario Único de Trámite).",
+    "Copia simple del grado académico de Bachiller en la especialidad.",
+    "Acta de sustentación y aprobación de la tesis o TSP, en original, indicando la modalidad de titulación.",
+    "Resoluciones de designación de asesor, jurado y aprobación del proyecto de tesis.",
+    "Levantamiento de observaciones, si las hubiera.",
+    "Copia simple del certificado de estudios.",
+    "Copia simple de la constancia de egresado.",
+    "Copia simple del certificado de inglés.",
+    "Recibo de pago por derecho de título.",
+    "Copia simple del DNI ampliado al 150 %.",
+    "Declaración jurada de etnia y lengua materna.",
+    "3 fotografías de frente, tamaño pasaporte, a color, fondo blanco, traje formal (sin lentes).",
+    "Constancia de fecha de primera matrícula, expedida por el Director de Escuela.",
+    "Constancia de fecha de egreso, expedida por el Director de Escuela.",
+    "Constancia de no adeudo a la FIMGM.",
+    "Constancia de no adeudo a la Biblioteca Central UNASAM.",
+    "Autorización de publicación emitida por el Repositorio Institucional UNASAM.",
+    "Constancia de evaluación de similitud, expedida por la Unidad de Investigación de la FIMGM.",
+    "Informe de similitud firmado por el asesor de proyectos de tesis.",
+    "Acta de conformidad para el empastado de la tesis, firmada por el jurado evaluador.",
+    "2 ejemplares empastados de la tesis o TSP, cada uno con su CD (autorización, constancias, reporte de similitud y el documento).",
+    "1 CD adicional para el expediente, verificado por el Repositorio Institucional.",
+    "1 libro original de la especialidad (Minería, Geología o Metalurgia), edición 2000 en adelante."
+  ],
+  segunda:[
+    "Solicitud dirigida al Decano de tu facultad.",
+    "Copia simple de la licenciatura u otro título profesional equivalente.",
+    "Informe final de tesis digital, acta de sustentación y resolución de Consejo de Facultad.",
+    "Copia simple del certificado de estudios.",
+    "Copia de certificado legalizado de idioma extranjero o lengua nativa, nivel básico.",
+    "Copia simple del DNI ampliada al 150 %.",
+    "3 fotos tamaño pasaporte, a color, fondo blanco, traje formal.",
+    "Recibo de pago por derecho de segunda especialidad profesional.",
+    "Otros requisitos específicos que pida tu facultad (Art. 28, no hay circular propia de la FIMGM)."
+  ]
+};
+
+const FAQ = [
+  ["¿La asesoría de tesis tiene costo?","No. Las asesorías para la obtención del grado de bachiller y del título profesional son gratuitas. (Art. 24)"],
+  ["¿Quiénes no pueden ser parte de mi jurado?","El rector y los vicerrectores; docentes con licencia sindical, de estudios, año sabático o sin goce de haber (salvo que suspendan temporalmente su licencia); y docentes con parentesco hasta el 4.º grado de consanguinidad o 2.º de afinidad contigo o entre ellos mismos. (Art. 25)"],
+  ["¿Cuánto porcentaje de IA puedo usar en mi tesis o TSP?","Máximo 20 %. El reporte de uso de IA se adjunta junto al reporte de similitud de Turnitin. (Sexta disposición complementaria)"],
+  ["Si desapruebo la sustentación, ¿qué pasa?","Se reprograma dentro de un plazo (2 meses en tesis y TSP; hasta 30 días si faltaste sin justificación). Si desapruebas por segunda vez, debes iniciar con un trabajo nuevo."],
+  ["¿El trabajo de investigación del bachiller es lo mismo que la tesis del título?","No. Son exigencias distintas y separadas: el trabajo de investigación o proyecto de tesis habilita el grado de bachiller; la tesis, el TSP u otra modalidad habilitan después el título profesional."],
+  ["¿Puedo tramitar el título en otra universidad?","No. El título profesional solo puede obtenerse en la misma universidad donde obtuviste el grado de bachiller. (Art. 15)"],
+  ["¿Qué pasa si el jurado no responde a tiempo?","El miembro que incumpla los plazos del reglamento es reemplazado de oficio, a propuesta de tu Director de Escuela, y queda registrado como demérito en su legajo personal."],
+  ["¿Dónde presento mi expediente en la FIMGM?","Físicamente, en un fólder, en la secretaría de la Decanatura de la Facultad de Ingeniería de Minas, Geología y Metalurgia — no por mesa de partes virtual. Para la constancia de egreso y el título, incluye también los anexos físicos (muestra de mineral, ejemplares de tesis, libro) en la misma entrega."],
+  ["¿Qué es la muestra de mineral o vidrio que piden para el bachillerato?","Es un requisito propio de la FIMGM (no del reglamento general): una pieza de 9×9 cm que se entrega junto con tu expediente físico de bachiller, siguiendo el modelo que tiene la secretaría de Decanatura."],
+  ["¿Qué es el Formulario Único de Trámite (FUT)?","Es el formato con el que se redacta cualquier solicitud dirigida al Decano de la FIMGM: tus datos, tu código y DNI, tu carrera, y el motivo del trámite. Lo entrega la secretaría de la Decanatura."],
+  ["¿Qué declaro en la Declaración Jurada de Etnia y Lengua Materna?","Es un formato exigido por la SUNEDU (RD N.° 0007-2025-SUNEDU-DS-DIRGRATU) donde declaras tu grupo étnico de autoidentificación y tu lengua materna (por ejemplo, castellano o quechua). Se exige tanto para el grado de bachiller como para el título profesional."],
+  ["¿Cuántos ejemplares de mi tesis debo entregar para el título?","Dos (02) ejemplares empastados de la tesis o del trabajo de suficiencia profesional, cada uno con su propio CD, más un CD adicional para el expediente verificado por el Repositorio Institucional."],
+];
+
+function classifyIcon(actor){
+  const a = actor.toLowerCase();
+  if(a.includes("jurado")) return "gavel";
+  if(a.includes("decan") || a.includes("consejo") || a.includes("rector") || a.includes("unasam")) return "landmark";
+  if(a.includes("estudiante") || a.includes("bachiller") || a.includes("egresado") || a.includes("programa")) return "user";
+  return "file-text";
+}
+
+/* icon per checklist item, so a student can scan the list by shape/color, not just read text */
+function classifyDoc(text){
+  const t = text.toLowerCase();
+  if(t.includes("fotograf")) return "camera";
+  if(t.includes("recibo de pago")) return "receipt";
+  if(t.includes("declaración jurada")) return "file-signature";
+  if(t.includes("dni")) return "id-card";
+  if(t.includes("no adeudo")) return "shield-check";
+  if(t.includes("malla curricular")) return "list-checks";
+  if(t.includes("prácticas")) return "briefcase";
+  if(t.includes("mineral") || t.includes("vidrio")) return "gem";
+  if(t.includes(" cd ") || t.includes(" cd") || t.includes("archivo digital")) return "disc";
+  if(t.includes("libro")) return "book-open";
+  if(t.includes("empastad") || t.includes("tesis") || t.includes("tsp")) return "book";
+  if(t.includes("sustentación")) return "mic";
+  if(t.includes("resoluci")) return "gavel";
+  if(t.includes("similitud") || t.includes("turnitin")) return "search";
+  if(t.includes("publicación") || t.includes("repositorio")) return "upload";
+  if(t.includes("solicitud")) return "file-signature";
+  return "file-text";
+}
+
+/* deterministic pseudo-random 0..1, stable across renders/resizes (same seed -> same layout) */
+function prand(seed){
+  const x = Math.sin(seed * 12.9898) * 43758.5453;
+  return x - Math.floor(x);
+}
+
+function stepHTML(s, n){
+  const plazo = s.plazo ? `<span class="chip-plazo">${s.plazo}</span>` : "";
+  const note = s.note ? `<div class="note note-${s.note.tone}">${s.note.text}</div>` : "";
+  const detail = s.detail ? `<p>${s.detail}</p>` : "";
+  const side = n % 2 === 1 ? "left" : "right";
+  const inset = (14 + prand(n) * 20).toFixed(1);            // 14%..34% inset from that side's edge — never the far edge, never a flat repeat
+  const nodeStyle = side === "left" ? `margin-left:${inset}%` : `margin-right:${inset}%`;
+  return `<li class="path-step side-${side}">
+    <div class="path-node" style="${nodeStyle}">
+      <div class="path-node-bubble"><i data-lucide="${classifyIcon(s.actor)}"></i></div>
+    </div>
+    <div class="path-card">
+      <div class="step-head"><div class="step-head-left"><span class="step-num">${String(n).padStart(2,"0")}</span><span class="actor">${s.actor}</span></div>${plazo}</div>
+      <h4>${s.title}</h4>
+      ${detail}
+      ${note}
+      <div class="foot"><span class="cite">${s.cite}</span></div>
+    </div>
+  </li>`;
+}
+function markerHTML(kind, label){
+  const icon = kind === "start" ? "circle-play" : "trophy";
+  return `<li class="path-step path-marker">
+    <div class="path-node"><div class="path-node-bubble"><i data-lucide="${icon}"></i></div></div>
+    <div class="path-card path-card--marker">${label}</div>
+  </li>`;
+}
+const roadRegistry = [];
+function renderTimeline(id, steps, opts){
+  opts = opts || {};
+  const endLabel = opts.endLabel || "Listo para el siguiente paso";
+  const skin = opts.skin || "pin";
+  const parts = [];
+  parts.push(markerHTML("start", opts.startLabel || "Empiezas aquí"));
+  steps.forEach((s,i)=> parts.push(stepHTML(s, i+1)));
+  parts.push(markerHTML("end", endLabel));
+  const ol = document.getElementById(id);
+  ol.classList.add("skin-"+skin);
+  ol.innerHTML = parts.join("");
+  roadRegistry.push(id);
+}
+
+/* content-aware vertical rhythm: the road's turn between two pins bends at the midpoint of their
+   heights, so the gap after a row must clear roughly half the DIFFERENCE between it and the next
+   card's height — two similar-height cards can sit close together, but a short card followed by a
+   tall one (or vice versa) needs a wider gap or the turn cuts across whichever card is taller. */
+function applySpacing(id){
+  const ol = document.getElementById(id);
+  if(!ol || ol.offsetParent === null) return;
+  const lis = Array.from(ol.children).filter(el => el.tagName === "LI");
+  const heights = lis.map(li => {
+    const card = li.querySelector(".path-card");
+    return card ? card.getBoundingClientRect().height : 0;
+  });
+  lis.forEach((li, idx)=>{
+    if(idx === lis.length - 1) return;
+    const diff = Math.abs(heights[idx] - heights[idx + 1]);
+    const bottom = Math.max(64, diff * 0.55 + 42 + prand(idx + 97) * 26);
+    li.style.marginBottom = Math.round(bottom) + "px";
+  });
+}
+
+function drawRoad(id){
+  const ol = document.getElementById(id);
+  if(!ol || ol.offsetParent === null) return;
+  let svg = ol.querySelector("svg.road-svg");
+  if(!svg){
+    svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("class", "road-svg");
+    ol.prepend(svg);
+  }
+  const pins = Array.from(ol.querySelectorAll(".path-node-bubble"));
+  if(pins.length < 2) return;
+  const box = ol.getBoundingClientRect();
+  const pts = pins.map(p=>{
+    const r = p.getBoundingClientRect();
+    return {x: r.left + r.width/2 - box.left, y: r.top + r.height/2 - box.top};
+  });
+  svg.setAttribute("viewBox", `0 0 ${box.width} ${box.height}`);
+  const R = 38;
+  let d = `M ${pts[0].x} ${pts[0].y}`;
+  for(let i=0;i<pts.length-1;i++){
+    const p0 = pts[i], p1 = pts[i+1];
+    const midY = (p0.y + p1.y)/2;
+    const dir = p1.x >= p0.x ? 1 : -1;
+    const ry0 = Math.min(R, Math.max(0, midY - p0.y));
+    const ry1 = Math.min(R, Math.max(0, p1.y - midY));
+    const rx = Math.min(R, Math.abs(p1.x - p0.x)/2);
+    d += ` L ${p0.x} ${midY-ry0}`;
+    d += ` Q ${p0.x} ${midY} ${p0.x+dir*rx} ${midY}`;
+    d += ` L ${p1.x-dir*rx} ${midY}`;
+    d += ` Q ${p1.x} ${midY} ${p1.x} ${midY+ry1}`;
+    d += ` L ${p1.x} ${p1.y}`;
+  }
+  svg.innerHTML = `<path class="road-shadow" d="${d}" transform="translate(7,16)"/><path class="road-base" d="${d}"/><path class="road-line" d="${d}"/>`;
+}
+function layoutRoad(id){ applySpacing(id); drawRoad(id); }
+function drawAllVisibleRoads(){ roadRegistry.forEach(layoutRoad); }
+
+function renderGradebar(id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  el.innerHTML = `
+    <div class="gradebar">
+      <span style="flex:14; background:#c81729;">0–13</span>
+      <span style="flex:3; background:#5fae82;">14–16</span>
+      <span style="flex:2; background:#2f8f5f;">17–18</span>
+      <span style="flex:2; background:#0b6e4f;">19–20</span>
+    </div>
+    <div class="gradelabels">
+      <span style="flex:14;">Desaprobado</span>
+      <span style="flex:3;">Aprobado</span>
+      <span style="flex:2;">Con mención</span>
+      <span style="flex:2;">Con excelencia</span>
+    </div>`;
+}
+function renderChecklist(key){
+  document.getElementById("checklistOut").innerHTML = REQUISITOS[key].map(t=>
+    `<li><span class="doc-ic"><i data-lucide="${classifyDoc(t)}"></i></span><span class="box"></span><span class="txt">${t}</span></li>`
+  ).join("");
+  document.querySelectorAll('#docTabs button').forEach(b=> b.classList.toggle('active', b.dataset.doc===key));
+  if(typeof lucide !== "undefined"){ lucide.createIcons(); }
+}
+function renderPlazos(){
+  const groups = [
+    ["Ser egresado", D.egreso],
+    ["Bachiller · trabajo de investigación", D.investigacion],
+    ["Título · tesis", D.tesis],
+    ["Título · TSP", D.tsp],
+    ["Segunda especialidad", D.segunda],
+    ["Trámite final (todos los casos)", D.tramite],
+  ];
+  const blocks = groups.map(([label, steps])=>{
+    const withPlazo = steps.filter(s=>s.plazo);
+    if(!withPlazo.length) return "";
+    const rows = withPlazo.map(s=>
+      `<tr><td>${s.actor}</td><td>${s.title}</td><td class="plazo-cell">${s.plazo}</td><td class="cite">${s.cite}</td></tr>`
+    ).join("");
+    return `<div class="plazo-group">
+      <div class="plazo-group-head">
+        <div><span class="plazo-group-tag">Etapa</span><h3 class="plazo-group-title">${label}</h3></div>
+        <span class="plazo-group-count">${withPlazo.length} paso${withPlazo.length===1?"":"s"} con plazo</span>
+      </div>
+      <div class="tablewrap">
+        <table class="plazos">
+          <thead><tr><th>Quién actúa</th><th>Acción</th><th>Plazo</th><th>Art.</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>`;
+  }).join("");
+  document.getElementById("plazosBody").innerHTML = blocks;
+}
+function renderFaq(){
+  document.getElementById("faqOut").innerHTML = FAQ.map(([q,a])=>`<details class="faq"><summary>${q}</summary><div class="a">${a}</div></details>`).join("");
+}
+
+document.querySelectorAll('#subtabsTitulo button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('#subtabsTitulo button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('[data-sub-panel]').forEach(p=> p.hidden = p.dataset.subPanel !== btn.dataset.sub);
+  });
+});
+document.querySelectorAll('#docTabs button').forEach(btn=>{
+  btn.addEventListener('click', ()=> renderChecklist(btn.dataset.doc));
+});
+
+const navLinks = document.querySelectorAll('.nlink');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ navLinks.forEach(l=> l.classList.toggle('active', l.getAttribute('href')==='#'+e.target.id)); }
+  });
+}, {rootMargin:"-40% 0px -55% 0px"});
+document.querySelectorAll('section.stage').forEach(s=>io.observe(s));
+
+const navEl = document.querySelector('nav.topnav');
+function updateNavScroll(){ navEl.classList.toggle('scrolled', window.scrollY > 24); }
+window.addEventListener('scroll', updateNavScroll, {passive:true});
+updateNavScroll();
+
+renderTimeline("tl-egreso", D.egreso, {startLabel:"Aún estás cursando", endLabel:"Ya eres egresado", skin:"badge"});
+renderTimeline("tl-investigacion", D.investigacion, {startLabel:"Ya egresaste", endLabel:"Proyecto aprobado — a redactar el informe final", skin:"pin"});
+renderTimeline("tl-tesis", D.tesis, {startLabel:"Bachiller, con informe final listo", endLabel:"Título profesional aprobado", skin:"pin"});
+renderTimeline("tl-tsp", D.tsp, {startLabel:"Bachiller, con 2+ años de experiencia", endLabel:"Título profesional aprobado", skin:"pin"});
+renderTimeline("tl-otras", D.otras, {startLabel:"Bachiller de carrera acreditada", endLabel:"Título profesional aprobado", skin:"badge"});
+renderTimeline("tl-segunda", D.segunda, {startLabel:"Licenciado, cursando el programa", endLabel:"Título de segunda especialidad aprobado", skin:"pin"});
+
+requestAnimationFrame(()=> requestAnimationFrame(drawAllVisibleRoads));
+if(document.fonts && document.fonts.ready){ document.fonts.ready.then(drawAllVisibleRoads); }
+window.addEventListener("resize", ()=>{
+  clearTimeout(window.__roadResizeT);
+  window.__roadResizeT = setTimeout(drawAllVisibleRoads, 120);
+});
+document.querySelectorAll('#subtabsTitulo button').forEach(btn=>{
+  btn.addEventListener('click', ()=> requestAnimationFrame(()=> layoutRoad("tl-"+btn.dataset.sub)));
+});
+renderGradebar("grade-tesis");
+renderGradebar("grade-tsp");
+renderGradebar("grade-segunda");
+renderChecklist("bachiller");
+renderPlazos();
+renderFaq();
+
+if(typeof lucide !== "undefined"){ lucide.createIcons(); }
+</script>
+</body>
+</html>
