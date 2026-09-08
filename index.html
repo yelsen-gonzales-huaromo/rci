@@ -110,28 +110,36 @@ nav.topnav.scrolled a.nlink.active{color:var(--primary); background:var(--primar
 @media (max-width:860px){.rutas{grid-template-columns:1fr 1fr;}}
 @media (max-width:480px){.rutas{grid-template-columns:1fr;}}
 .r-card{
-  position:relative; background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:22px 24px 24px; text-decoration:none;
+  position:relative; background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:0; text-decoration:none;
   box-shadow:var(--shadow-sm); transition:box-shadow .15s, transform .15s, border-color .15s;
-  display:flex; flex-direction:column; gap:10px;
+  display:flex; flex-direction:column; overflow:hidden;
 }
 .r-card:hover{box-shadow:var(--shadow-md); transform:translateY(-2px); border-color:var(--primary-line);}
+.r-media{position:relative; aspect-ratio:4/3; overflow:hidden; background:linear-gradient(165deg,var(--surface-2),var(--surface));}
+.r-media img{width:100%; height:100%; object-fit:cover; object-position:50% 18%; display:block;}
+.r-media .r-tag{
+  position:absolute; top:12px; left:12px; z-index:2; background:rgba(255,255,255,.94); backdrop-filter:blur(3px);
+  padding:5px 11px; border-radius:999px; box-shadow:0 4px 10px -4px rgba(12,34,51,.25);
+}
 .r-tag{font-family:"IBM Plex Mono",monospace; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--primary);}
 .r-tag--alt{color:var(--copper-dark);}
+.r-body{padding:0 22px 22px; margin-top:-28px; position:relative; z-index:2; display:flex; flex-direction:column; gap:8px;}
 .r-card .r-ic{
-  width:46px; height:46px; border-radius:50%; color:#fff; font-size:1.15rem;
+  width:52px; height:52px; border-radius:50%; color:#fff; font-size:1.2rem;
   background:linear-gradient(150deg, var(--primary) 0%, var(--primary-dark) 100%);
-  box-shadow:0 8px 16px -8px rgba(10,95,180,.5), 0 0 0 5px var(--primary-soft);
-  display:flex; align-items:center; justify-content:center; margin-top:2px;
+  box-shadow:0 10px 18px -8px rgba(10,95,180,.55), 0 0 0 4px #fff;
+  display:flex; align-items:center; justify-content:center; margin-bottom:2px;
 }
 .r-ic--alt{
   background:linear-gradient(150deg, var(--copper) 0%, var(--copper-dark) 100%) !important;
-  box-shadow:0 8px 16px -8px rgba(124,63,7,.5), 0 0 0 5px var(--copper-soft) !important;
+  box-shadow:0 10px 18px -8px rgba(124,63,7,.55), 0 0 0 4px #fff !important;
 }
 .r-card h3{font-size:1.12rem;}
 .r-card p{margin:0; font-size:.86rem; color:var(--muted);}
-.r-card .go{margin-top:auto; font-size:.82rem; font-weight:700; color:var(--primary); display:flex; align-items:center; gap:5px;}
+.r-card .go{margin-top:auto; padding-top:6px; font-size:.82rem; font-weight:700; color:var(--primary); display:flex; align-items:center; gap:5px;}
 .r-card--alt{border-style:dashed; border-color:var(--copper-line);}
 .r-card--alt .go{color:var(--copper-dark);}
+@media (max-width:480px){.r-media{aspect-ratio:16/10;}}
 .r-card--link::after{
   content:""; position:absolute; top:50%; right:-20px; width:13px; height:13px; z-index:2;
   border-top:2px solid var(--primary-line); border-right:2px solid var(--primary-line);
@@ -157,7 +165,25 @@ nav.topnav.scrolled a.nlink.active{color:var(--primary); background:var(--primar
 main{background:var(--surface);}
 section.stage{padding:60px 0; scroll-margin-top:84px; border-top:1px solid var(--line-soft);}
 section.stage:nth-of-type(even){background:var(--bg);}
-.stage-head{display:flex; align-items:flex-start; gap:18px; margin-bottom:6px;}
+.stage-head{display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:6px;}
+.stage-head-text{display:flex; align-items:flex-start; gap:18px; flex:1 1 320px; min-width:0;}
+.stage-mascot{
+  flex:0 0 auto; width:150px; height:auto; object-fit:contain;
+  filter:drop-shadow(0 14px 24px rgba(12,34,51,.18));
+}
+@media (max-width:720px){.stage-mascot{width:110px;}}
+@media (max-width:480px){.stage-mascot{width:90px;}}
+
+/* documentos-style header: heading + lede paragraph share one text column so nothing
+   stretches to match the mascot's height — no dead gap between them, whatever size the image is. */
+.stage-head-row{display:flex; align-items:flex-start; justify-content:space-between; gap:28px; flex-wrap:wrap;}
+.stage-head-col{flex:1 1 380px; min-width:0;}
+.stage-head-row .stage-head{margin-bottom:0;}
+.stage-head-row .stage-lede{margin-top:14px;}
+.stage-head-row .stage-mascot{width:230px; flex:0 0 auto;}
+@media (max-width:900px){.stage-head-row .stage-mascot{width:180px;}}
+@media (max-width:720px){.stage-head-row .stage-mascot{width:150px;}}
+@media (max-width:480px){.stage-head-row{flex-direction:column;} .stage-head-row .stage-mascot{width:140px; align-self:center;}}
 .phase-num{
   flex:0 0 auto; width:50px; height:50px; border-radius:50%; color:#fff;
   background:linear-gradient(150deg, var(--copper) 0%, var(--copper-dark) 100%);
@@ -192,6 +218,19 @@ ol.timeline{list-style:none; margin:36px 0 0; padding:0; position:relative;}
 .road-svg .road-shadow{fill:none; stroke:rgba(30,20,60,.32); stroke-linecap:round; stroke-width:26; filter:blur(11px);}
 .road-svg .road-base{fill:none; stroke-linecap:round; stroke-width:20; stroke:#2b3037;}
 .road-svg .road-line{fill:none; stroke:#f4f6f4; stroke-width:3; stroke-dasharray:13 14; stroke-linecap:round; opacity:.95;}
+
+/* step 1 is always laid out "side-left" (see stepHTML's odd/even rule), which reliably leaves an
+   empty gutter at the top-left of every timeline — a natural spot for a big, background-free mascot
+   that makes the route feel guided rather than empty. Hidden once the gutter gets too narrow to
+   clear the cards safely. */
+.timeline-wrap{position:relative;}
+.timeline-mascot{
+  position:absolute; top:-8px; left:-22px; z-index:0; pointer-events:none;
+  width:clamp(240px,24vw,380px); height:auto;
+  filter:drop-shadow(0 20px 34px rgba(12,34,51,.22));
+}
+@media (max-width:1220px){.timeline-mascot{width:clamp(200px,22vw,300px); left:-10px;}}
+@media (max-width:960px){.timeline-mascot{display:none;}}
 
 ol.timeline{padding:0 6%;}
 /* single, predictable layout rule: flexbox reliably centers pin+card on the row's height, no matter which
@@ -408,32 +447,52 @@ footer.site{border-top:1px solid var(--line); padding:32px 0 22px; background:va
 <div class="wrap">
   <div class="rutas">
     <a href="#egresado" class="r-card r-card--link">
-      <span class="r-tag">Paso 1 de 3</span>
-      <div class="r-ic"><i data-lucide="graduation-cap"></i></div>
-      <h3>Egresado</h3>
-      <p>Constancia de egreso y requisitos base.</p>
-      <span class="go">Ver ruta <i data-lucide="arrow-right"></i></span>
+      <div class="r-media">
+        <img src="img/mascota-egresado.webp" alt="Mascota FIMGM con la constancia de egresado" width="640" height="546" loading="lazy">
+        <span class="r-tag">Paso 1 de 3</span>
+      </div>
+      <div class="r-body">
+        <div class="r-ic"><i data-lucide="graduation-cap"></i></div>
+        <h3>Egresado</h3>
+        <p>Constancia de egreso y requisitos base.</p>
+        <span class="go">Ver ruta <i data-lucide="arrow-right"></i></span>
+      </div>
     </a>
     <a href="#bachiller" class="r-card r-card--link">
-      <span class="r-tag">Paso 2 de 3</span>
-      <div class="r-ic"><i data-lucide="flask-conical"></i></div>
-      <h3>Bachiller</h3>
-      <p>Investigación, idioma y resolución de grado.</p>
-      <span class="go">Ver ruta <i data-lucide="arrow-right"></i></span>
+      <div class="r-media">
+        <img src="img/mascota-bachiller.webp" alt="Mascota FIMGM investigando con libros de Minas, Geología y Metalurgia" width="640" height="497" loading="lazy">
+        <span class="r-tag">Paso 2 de 3</span>
+      </div>
+      <div class="r-body">
+        <div class="r-ic"><i data-lucide="flask-conical"></i></div>
+        <h3>Bachiller</h3>
+        <p>Investigación, idioma y resolución de grado.</p>
+        <span class="go">Ver ruta <i data-lucide="arrow-right"></i></span>
+      </div>
     </a>
     <a href="#titulo" class="r-card">
-      <span class="r-tag">Paso 3 de 3</span>
-      <div class="r-ic"><i data-lucide="award"></i></div>
-      <h3>Título profesional</h3>
-      <p>Tesis, TSP u otra modalidad.</p>
-      <span class="go">Ver ruta <i data-lucide="arrow-right"></i></span>
+      <div class="r-media">
+        <img src="img/mascota-titulo.webp" alt="Mascota FIMGM con el título profesional" width="640" height="535" loading="lazy">
+        <span class="r-tag">Paso 3 de 3</span>
+      </div>
+      <div class="r-body">
+        <div class="r-ic"><i data-lucide="award"></i></div>
+        <h3>Título profesional</h3>
+        <p>Tesis, TSP u otra modalidad.</p>
+        <span class="go">Ver ruta <i data-lucide="arrow-right"></i></span>
+      </div>
     </a>
     <a href="#segunda" class="r-card r-card--alt">
-      <span class="r-tag r-tag--alt">Ruta aparte</span>
-      <div class="r-ic r-ic--alt"><i data-lucide="layers"></i></div>
-      <h3>2.ª especialidad</h3>
-      <p>Para quien ya tiene título previo.</p>
-      <span class="go">Ver ruta <i data-lucide="arrow-right"></i></span>
+      <div class="r-media">
+        <img src="img/mascota-segunda.webp" alt="Mascota FIMGM en campo con mapa y picota" width="640" height="492" loading="lazy">
+        <span class="r-tag r-tag--alt">Ruta aparte</span>
+      </div>
+      <div class="r-body">
+        <div class="r-ic r-ic--alt"><i data-lucide="layers"></i></div>
+        <h3>2.ª especialidad</h3>
+        <p>Para quien ya tiene título previo.</p>
+        <span class="go">Ver ruta <i data-lucide="arrow-right"></i></span>
+      </div>
     </a>
   </div>
 
@@ -457,25 +516,35 @@ footer.site{border-top:1px solid var(--line); padding:32px 0 22px; background:va
   <section class="stage" id="egresado">
     <div class="wrap">
       <div class="stage-head">
-        <div class="phase-num">01</div>
-        <div><span class="tag">Antes de empezar</span><h2>Ser egresado</h2></div>
+        <div class="stage-head-text">
+          <div class="phase-num">01</div>
+          <div><span class="tag">Antes de empezar</span><h2>Ser egresado</h2></div>
+        </div>
       </div>
       <p class="stage-lede">Eres egresado cuando completas el plan de estudios: mínimo 200 créditos entre obligatorios y electivos, tus prácticas preprofesionales sustentadas, y ninguna deuda con la UNASAM. <span class="cite">Art. 6</span></p>
-      <ol class="timeline" id="tl-egreso"></ol>
+      <div class="timeline-wrap">
+        <img class="timeline-mascot" src="img/mascota-egresado.webp" alt="" width="640" height="546" loading="lazy">
+        <ol class="timeline" id="tl-egreso"></ol>
+      </div>
     </div>
   </section>
 
   <section class="stage" id="bachiller">
     <div class="wrap">
       <div class="stage-head">
-        <div class="phase-num">02</div>
-        <div><span class="tag">Título II y III · Cap. I</span><h2>Camino al grado de bachiller</h2></div>
+        <div class="stage-head-text">
+          <div class="phase-num">02</div>
+          <div><span class="tag">Título II y III · Cap. I</span><h2>Camino al grado de bachiller</h2></div>
+        </div>
       </div>
       <p class="stage-lede">Aplica a todo egresado que no esté exonerado por bachillerato automático.</p>
 
       <h3 class="subhead">Trabajo de investigación o proyecto de tesis</h3>
       <p class="subhead-note">Solo si no estás exonerado. Debe vincularse a una línea de investigación de tu escuela; el trámite recién se inicia una vez que ya egresaste. <span class="cite">Art. 14.1.2</span></p>
-      <ol class="timeline" id="tl-investigacion"></ol>
+      <div class="timeline-wrap">
+        <img class="timeline-mascot" src="img/mascota-bachiller.webp" alt="" width="640" height="497" loading="lazy">
+        <ol class="timeline" id="tl-investigacion"></ol>
+      </div>
 
       <h3 class="subhead">Idioma extranjero o lengua nativa</h3>
       <p class="subhead-note">Certificado de nivel básico validado por el Centro de Idiomas: inglés u otro idioma extranjero, o una lengua nativa (de preferencia quechua). <span class="cite">Art. 13</span></p>
@@ -490,8 +559,10 @@ footer.site{border-top:1px solid var(--line); padding:32px 0 22px; background:va
   <section class="stage" id="titulo">
     <div class="wrap">
       <div class="stage-head">
-        <div class="phase-num">03</div>
-        <div><span class="tag">Título III · Cap. II</span><h2>Camino al título profesional</h2></div>
+        <div class="stage-head-text">
+          <div class="phase-num">03</div>
+          <div><span class="tag">Título III · Cap. II</span><h2>Camino al título profesional</h2></div>
+        </div>
       </div>
       <p class="stage-lede">Requisito previo indispensable: contar con el grado de bachiller. Elige una modalidad — no se combinan.</p>
 
@@ -503,17 +574,26 @@ footer.site{border-top:1px solid var(--line); padding:32px 0 22px; background:va
 
       <div class="subpanel" data-sub-panel="tesis">
         <div class="path-intro">Se cumple con el <b>informe final de tesis</b>, aprobado y sustentado ante un jurado. <span class="cite">Art. 17.1</span></div>
-        <ol class="timeline" id="tl-tesis"></ol>
+        <div class="timeline-wrap">
+          <img class="timeline-mascot" src="img/mascota-titulo.webp" alt="" width="640" height="535" loading="lazy">
+          <ol class="timeline" id="tl-tesis"></ol>
+        </div>
         <div class="gradescale" id="grade-tesis"></div>
       </div>
       <div class="subpanel" data-sub-panel="tsp" hidden>
         <div class="path-intro">Para bachilleres con <b>mínimo 2 años de experiencia laboral</b> en su especialidad. <span class="cite">Art. 17.2</span></div>
-        <ol class="timeline" id="tl-tsp"></ol>
+        <div class="timeline-wrap">
+          <img class="timeline-mascot" src="img/mascota-titulo.webp" alt="" width="640" height="535" loading="lazy">
+          <ol class="timeline" id="tl-tsp"></ol>
+        </div>
         <div class="gradescale" id="grade-tsp"></div>
       </div>
       <div class="subpanel" data-sub-panel="otras" hidden>
         <div class="path-intro">Solo para bachilleres de <b>carreras acreditadas</b>: artículo indizado (Scielo u otra de igual o mayor impacto) o patente. <span class="cite">Art. 17.3</span></div>
-        <ol class="timeline" id="tl-otras"></ol>
+        <div class="timeline-wrap">
+          <img class="timeline-mascot" src="img/mascota-titulo.webp" alt="" width="640" height="535" loading="lazy">
+          <ol class="timeline" id="tl-otras"></ol>
+        </div>
       </div>
 
       <div class="callout">
@@ -526,11 +606,16 @@ footer.site{border-top:1px solid var(--line); padding:32px 0 22px; background:va
   <section class="stage" id="segunda">
     <div class="wrap">
       <div class="stage-head">
-        <div class="phase-num"><i data-lucide="layers"></i></div>
-        <div><span class="tag">Título III · Cap. III</span><h2>Título de segunda especialidad</h2></div>
+        <div class="stage-head-text">
+          <div class="phase-num"><i data-lucide="layers"></i></div>
+          <div><span class="tag">Título III · Cap. III</span><h2>Título de segunda especialidad</h2></div>
+        </div>
       </div>
       <p class="stage-lede">Para quienes ya tienen licenciatura u otro título equivalente y cursan un programa de segunda especialidad (mínimo 2 semestres, 40 créditos). <span class="cite">Art. 18–20</span></p>
-      <ol class="timeline" id="tl-segunda"></ol>
+      <div class="timeline-wrap">
+        <img class="timeline-mascot" src="img/mascota-segunda.webp" alt="" width="640" height="492" loading="lazy">
+        <ol class="timeline" id="tl-segunda"></ol>
+      </div>
       <div class="gradescale" id="grade-segunda"></div>
 
       <div class="callout">
@@ -542,11 +627,18 @@ footer.site{border-top:1px solid var(--line); padding:32px 0 22px; background:va
 
   <section class="stage" id="documentos">
     <div class="wrap">
-      <div class="stage-head">
-        <div class="phase-num"><i data-lucide="clipboard-check"></i></div>
-        <div><span class="tag">Checklist FIMGM 2026</span><h2>Documentos por trámite</h2></div>
+      <div class="stage-head-row">
+        <div class="stage-head-col">
+          <div class="stage-head">
+            <div class="stage-head-text">
+              <div class="phase-num"><i data-lucide="clipboard-check"></i></div>
+              <div><span class="tag">Checklist FIMGM 2026</span><h2>Documentos por trámite</h2></div>
+            </div>
+          </div>
+          <p class="stage-lede">Estas son las listas oficiales de la <b style="color:var(--ink)">Facultad de Ingeniería de Minas, Geología y Metalurgia</b> — más específicas y completas que el artículo general del reglamento. El expediente se presenta siempre en la <b style="color:var(--ink)">secretaría de la Decanatura de la FIMGM</b>.</p>
+        </div>
+        <img class="stage-mascot" src="img/mascota-documentos.webp" alt="" width="640" height="530" loading="lazy">
       </div>
-      <p class="stage-lede">Estas son las listas oficiales de la <b style="color:var(--ink)">Facultad de Ingeniería de Minas, Geología y Metalurgia</b> — más específicas y completas que el artículo general del reglamento. El expediente se presenta siempre en la <b style="color:var(--ink)">secretaría de la Decanatura de la FIMGM</b>.</p>
 
       <div class="docpicker" id="docTabs">
         <button data-doc="egresado"><i data-lucide="graduation-cap"></i><h4>Constancia de egresado</h4><p>9 requisitos</p></button>
@@ -588,8 +680,10 @@ footer.site{border-top:1px solid var(--line); padding:32px 0 22px; background:va
   <section class="stage" id="plazos">
     <div class="wrap">
       <div class="stage-head">
-        <div class="phase-num"><i data-lucide="gauge"></i></div>
-        <div><span class="tag">Panel de control</span><h2>Todos los plazos, en una tabla</h2></div>
+        <div class="stage-head-text">
+          <div class="phase-num"><i data-lucide="gauge"></i></div>
+          <div><span class="tag">Panel de control</span><h2>Todos los plazos, en una tabla</h2></div>
+        </div>
       </div>
       <p class="stage-lede">Agrupado por etapa del trámite: cada bloque es una etapa y cada fila dentro de ella es un paso del reglamento con plazo explícito, útil para saber si se está demorando más de lo normal.</p>
       <div class="plazo-groups" id="plazosBody"></div>
@@ -599,8 +693,11 @@ footer.site{border-top:1px solid var(--line); padding:32px 0 22px; background:va
   <section class="stage" id="faq">
     <div class="wrap">
       <div class="stage-head">
-        <div class="phase-num"><i data-lucide="circle-help"></i></div>
-        <div><span class="tag">Dudas comunes</span><h2>Preguntas frecuentes</h2></div>
+        <div class="stage-head-text">
+          <div class="phase-num"><i data-lucide="circle-help"></i></div>
+          <div><span class="tag">Dudas comunes</span><h2>Preguntas frecuentes</h2></div>
+        </div>
+        <img class="stage-mascot" src="img/mascota-otros.webp" alt="" width="640" height="456" loading="lazy">
       </div>
       <div style="margin-top:22px;" id="faqOut"></div>
     </div>
