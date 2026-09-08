@@ -69,14 +69,19 @@ nav.topnav.scrolled a.nlink.active{color:var(--primary); background:var(--primar
 
 /* ---------------- hero ---------------- */
 .hero{
-  position:relative; overflow:hidden; padding:148px 0 64px; isolation:isolate;
+  position:relative; overflow:hidden; padding:148px 0 168px; isolation:isolate;
   background:linear-gradient(180deg,#0a5fb4,#bcdcef);
 }
-@media (max-width:640px){.hero{padding:128px 0 48px;}}
+@media (max-width:640px){.hero{padding:128px 0 88px;}}
 .hero-bg{position:absolute; inset:0; width:100%; height:100%; z-index:0; display:block; object-fit:cover;}
 .hero-scrim{
   position:absolute; inset:0; z-index:0; pointer-events:none;
-  background:linear-gradient(180deg, rgba(3,18,36,.1) 0%, rgba(3,18,36,.32) 78%, #fff 100%);
+  /* two layers: a steady vignette so the copy and stats stay legible over the video,
+     plus a separate mist that only kicks in near the very bottom — stacked so it has
+     real room to fade in gradually instead of snapping to white in a thin strip. */
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 74%, rgba(255,255,255,.55) 90%, #fff 100%),
+    linear-gradient(180deg, rgba(3,18,36,.1) 0%, rgba(3,18,36,.24) 40%, rgba(3,18,36,.42) 68%, rgba(3,18,36,.58) 100%);
 }
 .hero-inner{position:relative; z-index:2; max-width:640px;}
 
@@ -105,6 +110,9 @@ nav.topnav.scrolled a.nlink.active{color:var(--primary); background:var(--primar
 .stat-row .l{font-size:.78rem; color:rgba(255,255,255,.85); margin-top:3px;}
 
 /* ---------------- rutas ---------------- */
+/* white, not the page's gray, so it reads as a continuation of the hero's fade-to-white
+   scrim instead of a visible seam right under it. */
+.rutas-section{background:var(--surface); display:flow-root;}
 .section-lede{color:var(--body); max-width:64ch; margin:12px 0 0; font-size:1rem;}
 .rutas{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:22px 0 60px;}
 @media (max-width:860px){.rutas{grid-template-columns:1fr 1fr;}}
@@ -164,7 +172,7 @@ nav.topnav.scrolled a.nlink.active{color:var(--primary); background:var(--primar
 /* ---------------- sections ---------------- */
 main{background:var(--surface);}
 section.stage{padding:60px 0; scroll-margin-top:84px; border-top:1px solid var(--line-soft);}
-section.stage:nth-of-type(even){background:var(--bg);}
+section.stage:nth-of-type(odd){background:var(--bg);}
 .stage-head{display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:6px;}
 .stage-head-text{display:flex; align-items:flex-start; gap:18px; flex:1 1 320px; min-width:0;}
 .stage-mascot{
@@ -172,7 +180,9 @@ section.stage:nth-of-type(even){background:var(--bg);}
   filter:drop-shadow(0 14px 24px rgba(12,34,51,.18));
 }
 @media (max-width:720px){.stage-mascot{width:110px;}}
-@media (max-width:480px){.stage-mascot{width:90px;}}
+/* FAQ has no paired paragraph to sit beside — the small floating image reads as
+   clutter next to a short heading on a narrow screen, so it's desktop-only. */
+@media (max-width:640px){#faq .stage-mascot{display:none;}}
 
 /* documentos-style header: heading + lede paragraph share one text column so nothing
    stretches to match the mascot's height — no dead gap between them, whatever size the image is. */
@@ -379,9 +389,9 @@ footer.site{border-top:1px solid var(--line); padding:32px 0 22px; background:va
 .footer-id h3{color:var(--ink); font-size:1.05rem; line-height:1.3; max-width:34ch;}
 .footer-sub{color:var(--muted); font-size:.78rem; margin:4px 0 10px;}
 .contact-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px;}
-.contact-list li{display:flex; align-items:center; gap:9px; color:var(--body); font-size:.86rem;}
-.contact-list svg.lucide{color:var(--primary); flex:0 0 auto;}
-.contact-list a{color:var(--primary); text-decoration:underline; text-decoration-color:var(--primary-line);}
+.contact-list li{display:flex; align-items:flex-start; flex-wrap:wrap; gap:5px 9px; color:var(--body); font-size:.86rem;}
+.contact-list svg.lucide{color:var(--primary); flex:0 0 auto; margin-top:2px;}
+.contact-list a{color:var(--primary); text-decoration:underline; text-decoration-color:var(--primary-line); word-break:break-word;}
 
 .folder-links{display:flex; flex-direction:column; gap:8px;}
 .folder-link{
@@ -444,6 +454,7 @@ footer.site{border-top:1px solid var(--line); padding:32px 0 22px; background:va
   </div>
 </div>
 
+<div class="rutas-section">
 <div class="wrap">
   <div class="rutas">
     <a href="#egresado" class="r-card r-card--link">
@@ -509,6 +520,7 @@ footer.site{border-top:1px solid var(--line); padding:32px 0 22px; background:va
       </div>
     </div>
   </div>
+</div>
 </div>
 
 <main>
